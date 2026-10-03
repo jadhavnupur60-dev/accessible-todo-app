@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Accessible WCAG-friendly To-Do List application">
+
+    <title>Accessible To-Do List</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header>
+            <h1>Accessible To-Do List</h1>
+
+            <p>
+                Manage your tasks using the mouse or keyboard.
+            </p>
+        </header>
+
+
+        <section aria-labelledby="add-task-heading">
+
+            <h2 id="add-task-heading">Add a Task</h2>
+
+            <form id="taskForm">
+
+                <label for="taskInput">
+                    Task name
+                </label>
+
+                <div class="input-group">
+
+                    <input
+                        type="text"
+                        id="taskInput"
+                        name="task"
+                        placeholder="Enter a task"
+                        autocomplete="off"
+                        required
+                    >
+
+                    <button
+                        type="submit"
+                        id="addButton"
+                        aria-label="Add task"
+                    >
+                        Add Task
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <section
+            aria-labelledby="task-list-heading"
+            class="task-section"
+        >
+
+            <h2 id="task-list-heading">
+                My Tasks
+            </h2>
+
+            <p id="taskCount">
+                0 tasks
+            </p>
+
+            <ul
+                id="taskList"
+                aria-live="polite"
+                aria-relevant="additions removals"
+            >
+            </ul>
+
+        </section>
+
+
+        <div
+            id="liveRegion"
+            class="visually-hidden"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+        >
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
